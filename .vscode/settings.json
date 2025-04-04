@@ -1,0 +1,9 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "prettier.tabWidth": 2,
+  "eslint.format.enable": true
+}

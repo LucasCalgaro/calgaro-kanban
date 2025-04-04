@@ -1,0 +1,45 @@
+#!/bin/sh
+# echo "🔍 Detectando sistema operacional..."
+# OS="unknown"
+
+# if [ "$(uname)" = "Linux" ]; then
+#   OS="Linux"
+# elif [ "$(uname)" = "Darwin" ]; then
+#   OS="MacOS"
+# elif [ "$(uname | grep -i mingw)" ]; then
+#   OS="Windows"
+# fi
+
+# echo "🖥️  Sistema detectado: $OS"
+
+# # Função para parar o processo no Windows
+# stop_windows() {
+#   echo "🔍 Verificando processos npm run dev no Windows..."
+#   PIDS=$(wmic process where "CommandLine like '%next%dev%'" get ProcessId 2>&1 | awk 'NR>1 {print $1}')
+
+#   if [ ! -z "$PIDS" ]; then
+#     echo "🛑 Parando npm run dev (PIDs: $PIDS)..."
+#     for PID in $PIDS; do
+#       # Verifica se o processo ainda está rodando
+#       if tasklist //FI "PID eq $PID" | grep -q "$PID"; then
+#         echo "🔹 Finalizando processo PID: $PID..."
+#         taskkill //F //PID $PID
+#       else
+#         echo "⚠️  Processo PID: $PID já foi encerrado."
+#       fi
+#     done
+#     sleep 2
+#   else
+#     echo "✅ Nenhum processo npm run dev encontrado."
+#   fi
+# }
+
+# # Executa a lógica correta de acordo com o sistema
+# case "$OS" in
+#   "Windows") stop_windows ;;
+#   "Linux" | "MacOS") echo "✅ Pulando verificação de processos no Linux/macOS." ;;
+#   *) echo "⚠️ Sistema operacional não reconhecido. Pulando verificação de processos." ;;
+# esac
+
+# echo "🚀 Rodando build..."
+# npm run build
